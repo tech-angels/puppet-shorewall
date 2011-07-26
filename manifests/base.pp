@@ -32,6 +32,7 @@ class shorewall::base {
             File["/var/lib/puppet/modules/shorewall/hosts"],
             File["/var/lib/puppet/modules/shorewall/policy"],
             File["/var/lib/puppet/modules/shorewall/rules"],
+            File["/var/lib/puppet/modules/shorewall/tcrules"],
             File["/var/lib/puppet/modules/shorewall/masq"],
             File["/var/lib/puppet/modules/shorewall/proxyarp"],
             File["/var/lib/puppet/modules/shorewall/nat"],

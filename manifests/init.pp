@@ -35,6 +35,8 @@ class shorewall {
   shorewall::managed_file { policy: }
   # See http://www.shorewall.net/3.0/Documentation.htm#Rules
   shorewall::managed_file { rules: }
+  # See http://www.shorewall.net/4.2/PacketMarking.html
+  shorewall::managed_file { tcrules: }
   # See http://www.shorewall.net/3.0/Documentation.htm#Masq
   shorewall::managed_file{ masq: }
   # See http://www.shorewall.net/3.0/Documentation.htm#ProxyArp
