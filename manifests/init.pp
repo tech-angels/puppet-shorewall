@@ -1,12 +1,9 @@
 class shorewall { 
 
-  include common::moduledir
-  module_dir { "shorewall": }
-
   case $operatingsystem {
     gentoo: { include shorewall::gentoo }
     debian: { include shorewall::debian }
-    centos: { include shorewall::base }
+    centos: { include shorewall::centos }
     ubuntu: {
     case $lsbdistcodename {
       karmic: { include shorewall::ubuntu::karmic }
@@ -17,12 +14,6 @@ class shorewall {
       notice "unknown operatingsystem: $operatingsystem" 
 		  include shorewall::base
     }
-  }
-
-  file {"/var/lib/puppet/modules/shorewall":
-    ensure => directory,
-    force => true,
-    owner => root, group => 0, mode => 0755; 
   }
 
   # See http://www.shorewall.net/3.0/Documentation.htm#Zones
@@ -51,4 +42,6 @@ class shorewall {
   shorewall::managed_file { routestopped: }
   # See http://www.shorewall.net/3.0/Documentation.htm#Variables 
   shorewall::managed_file { params: }
+  # http://www.shorewall.net/manpages/shorewall-providers.html
+  shorewall::managed_file { providers: }
 }

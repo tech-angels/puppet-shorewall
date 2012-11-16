@@ -14,7 +14,7 @@ define shorewall::tcrule(
     $helper = '',
     $order
 ){
-    shorewall::entry{"tcrules.d/${order}-${name}":
+    shorewall::entry{"tcrules-${order}-${name}":
         ensure => $ensure,
         line => "# ${name}\n${mark}\t${source}\t${destination}\t${proto}\t${destinationport}\t${sourceport}\t${user}\t${test}\t${length}\t${tos}\t${connbytes}\t${helper}",
     }
