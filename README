@@ -1,6 +1,6 @@
 Puppet Module for Shorewall
 ---------------------------
-This module manages the configuration of Shorewall (http://www.shorewall.net/)
+This fork doesn't clear the IPV6 tables !
 
 Versions
 --------
